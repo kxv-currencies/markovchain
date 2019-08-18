@@ -20,13 +20,13 @@ const markovChain = (dataset, length) => {
       randomStrArr.push(dataset[randomise(dataset.length)].slice(counter, counter + 1));
       counter++;
       randomiseCharacters();
-    }
+    };
 
     randomiseCharacters();
     return randomStrArr.join('');
-  })
+  });
   console.log(randomisedArray)
   return randomisedArray;
-}
+};
 
-module.exports = markovChain;
+module.exports = { markovChain, randomise };

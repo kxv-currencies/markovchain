@@ -1,4 +1,4 @@
-const markovChain = require('./markovChain-js.js');
+const { markovChain, randomise } = require('./markovChain-js.js');
 
 const testData = require('./testData.json')
 
@@ -27,8 +27,27 @@ describe('markovChain-js', () => {
     const dataset = ['hat', 'cat', 'fab'];
     expect(markovChain(dataset, 1)[0].includes('a', 1)).toBeTruthy();
   });
-  it.only('randomises characters in array using characters in array - keeping character positions', () => {
+  it('randomises characters in array using characters in array - keeping character positions if array items are all the same length', () => {
     const dataset = ['lollipop', 'sunshine', 'fabulous'];
-    expect(markovChain(dataset, 2)[0].length).toBe(8);
+    expect(markovChain(dataset, 1)[0].length).toBe(8);
+  });
+  it('randomises characters in array using characters in array - keeping character positions if array items are of different lengths', () => {
+    const dataset = ['lolli', 'pop'];
+    expect(markovChain(dataset, 1)[0].includes('o', 1)).toBeTruthy();
+  });
+  it('returns random array for larger dataset', () => {
+    expect(markovChain(firstNameData, 1)[0].length).toBeGreaterThan(1);
+  });
+  it('returns larger random array for larger dataset', () => {
+    expect(markovChain(firstNameData, 100)[0].length).toBeGreaterThan(1);
+  });
+});
+
+describe('randomise', () => {
+  it('returns 0', () => {
+    expect(randomise(0)).toBe(0);
+  });
+  it('returns a random number between 0 and num given - not including num given', () => {
+    expect(randomise(100)).toBeLessThan(100);
   });
 });
