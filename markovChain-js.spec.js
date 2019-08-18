@@ -19,8 +19,16 @@ describe('markovChain-js', () => {
   it('returns array of given length', () => {
     expect(markovChain(['a', 'b'], 1).length).toBe(1);
   });
-  it('randomises characters in array', () => {
+  it('randomises characters in array of single characters', () => {
     const dataset = ['a','b','c','d','e'];
     expect(markovChain(dataset, 5).length).toBe(5);
+  });
+  it('randomises characters in array using characters in array - keeping character positions and all 3 letters long', () => {
+    const dataset = ['hat', 'cat', 'fab'];
+    expect(markovChain(dataset, 1)[0].includes('a', 1)).toBeTruthy();
+  });
+  it.only('randomises characters in array using characters in array - keeping character positions', () => {
+    const dataset = ['lollipop', 'sunshine', 'fabulous'];
+    expect(markovChain(dataset, 2)[0].length).toBe(8);
   });
 });
