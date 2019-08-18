@@ -4,7 +4,7 @@
   "description": "## Author: Kay Vose aka CodeFox",
   "main": "markovChain-js.js",
   "scripts": {
-    "test": "npm t"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
