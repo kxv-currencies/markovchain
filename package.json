@@ -1,0 +1,22 @@
+{
+  "name": "markovchain",
+  "version": "1.0.0",
+  "description": "## Author: Kay Vose aka CodeFox",
+  "main": "markovChain-js.js",
+  "scripts": {
+    "test": "npm t"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theCodeFox/markovchain.git"
+  },
+  "author": "kay vose aka codefox",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/theCodeFox/markovchain/issues"
+  },
+  "homepage": "https://github.com/theCodeFox/markovchain#readme",
+  "dependencies": {
+    "jest": "^24.9.0"
+  }
+}
